@@ -37,9 +37,11 @@ var beepbox = (function (exports) {
         { name: "dbl harmonic :(", realName: "double harmonic minor", flags: [true, false, true, true, false, false, true, true, true, false, false, true] },
         { name: "strange", realName: "whole tone", flags: [true, false, true, false, true, false, true, false, true, false, true, false] },
         { name: "expert", realName: "chromatic", flags: [true, true, true, true, true, true, true, true, true, true, true, true] },
+	{ name: "super expert", realName: "2note", flags: [false, false, true, false, false, false, false, false, true, false, false, false] },
     ]);
     Config.keys = toNameMap([
-        { name: "C", isWhiteKey: true, basePitch: 12 },
+         { name: "low", isWhiteKey: true, basePitch: 6 },
+	{ name: "C", isWhiteKey: true, basePitch: 12 },
         { name: "C♯", isWhiteKey: false, basePitch: 13 },
         { name: "D", isWhiteKey: true, basePitch: 14 },
         { name: "D♯", isWhiteKey: false, basePitch: 15 },
@@ -53,9 +55,9 @@ var beepbox = (function (exports) {
         { name: "B", isWhiteKey: true, basePitch: 23 },
     ]);
     Config.blackKeyNameParents = [-1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1];
-    Config.tempoMin = 30;
-    Config.tempoMax = 300;
-    Config.reverbRange = 4;
+    Config.tempoMin = 0;
+    Config.tempoMax = 3000;
+    Config.reverbRange = 8;
     Config.beatsPerBarMin = 3;
     Config.beatsPerBarMax = 16;
     Config.barCountMin = 1;
@@ -135,8 +137,9 @@ var beepbox = (function (exports) {
         { name: "strum", harmonizes: true, customInterval: false, arpeggiates: false, isCustomInterval: false, strumParts: 1 },
         { name: "arpeggio", harmonizes: false, customInterval: false, arpeggiates: true, isCustomInterval: false, strumParts: 0 },
         { name: "custom interval", harmonizes: true, customInterval: true, arpeggiates: true, isCustomInterval: true, strumParts: 0 },
+	{ name: "hm", harmonizes: true, customInterval: true, arpeggiates: true, isCustomInterval: true, strumParts: 1 },
     ]);
-    Config.maxChordSize = 4;
+    Config.maxChordSize = 64;
     Config.operatorCount = 4;
     Config.algorithms = toNameMap([
         { name: "1←(2 3 4)", carrierCount: 1, associatedCarrier: [1, 1, 1, 1], modulatedBy: [[2, 3, 4], [], [], []] },
@@ -227,14 +230,14 @@ var beepbox = (function (exports) {
     Config.harmonicsMax = (1 << Config.harmonicsControlPointBits) - 1;
     Config.harmonicsWavelength = 1 << 11;
     Config.pulseWidthRange = 8;
-    Config.pitchChannelCountMin = 1;
-    Config.pitchChannelCountMax = 6;
+    Config.pitchChannelCountMin = 0;
+    Config.pitchChannelCountMax = 40;
     Config.noiseChannelCountMin = 0;
-    Config.noiseChannelCountMax = 3;
+    Config.noiseChannelCountMax = 20;
     Config.noiseInterval = 6;
     Config.pitchesPerOctave = 12;
     Config.drumCount = 12;
-    Config.pitchOctaves = 7;
+    Config.pitchOctaves = 21;
     Config.windowOctaves = 3;
     Config.scrollableOctaves = Config.pitchOctaves - Config.windowOctaves;
     Config.windowPitchCount = Config.windowOctaves * Config.pitchesPerOctave + 1;
