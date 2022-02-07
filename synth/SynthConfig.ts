@@ -222,6 +222,7 @@ export class Config {
 		{name: "dbl harmonic :(", realName: "double harmonic minor", flags: [true, false,  true,  true, false, false,  true,  true,  true, false, false,  true]},
 		{name: "strange",         realName: "whole tone",            flags: [true, false,  true, false,  true, false,  true, false,  true, false,  true, false]},
 		{name: "expert",          realName: "chromatic",             flags: [true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true]},
+		{name: "super expert",          realName: "idontknow",             flags: [false,  false,  true,  false,  false,  false,  false,  false,  true,  false,  false,  false]},
 	]);
 	public static readonly keys: DictionaryArray<Key> = toNameMap([
 		{name: "C",  isWhiteKey:  true, basePitch: 12}, // C0 has index 12 on the MIDI scale. C7 is 96, and C9 is 120. C10 is barely in the audible range.
@@ -361,6 +362,7 @@ export class Config {
 		{name: "strum",           customInterval: false, arpeggiates: false, strumParts: 1, singleTone: false},
 		{name: "arpeggio",        customInterval: false, arpeggiates:  true, strumParts: 0, singleTone:  true},
 		{name: "custom interval", customInterval:  true, arpeggiates: false, strumParts: 0, singleTone:  true},
+		{name: "ouch", customInterval:  true, arpeggiates: true, strumParts: 1, singleTone:  true},
 	]);
 	public static readonly maxChordSize: number = 32;
 	public static readonly operatorCount: number = 4;
@@ -456,14 +458,14 @@ export class Config {
 	public static readonly harmonicsWavelength: number = 1 << 11; // 2048
 	public static readonly pulseWidthRange: number = 8;
 	public static readonly pulseWidthStepPower: number = 0.5;
-	public static readonly pitchChannelCountMin: number = 1;
-	public static readonly pitchChannelCountMax: number = 10;
+	public static readonly pitchChannelCountMin: number = 0;
+	public static readonly pitchChannelCountMax: number = 40;
 	public static readonly noiseChannelCountMin: number = 0;
-	public static readonly noiseChannelCountMax: number = 5;
+	public static readonly noiseChannelCountMax: number = 20;
 	public static readonly noiseInterval: number = 6;
 	public static readonly pitchesPerOctave: number = 12; // TODO: Use this for converting pitch to frequency.
 	public static readonly drumCount: number = 12;
-	public static readonly pitchOctaves: number = 7;
+	public static readonly pitchOctaves: number = 22;
 	public static readonly maxPitch: number = Config.pitchOctaves * Config.pitchesPerOctave;
 	public static readonly maximumTonesPerChannel: number = Config.maxChordSize * 2;
 	public static readonly justIntonationSemitones: number[] = [1.0/2.0, 8.0/15.0, 9.0/16.0, 3.0/5.0, 5.0/8.0, 2.0/3.0, 32.0/45.0, 3.0/4.0, 4.0/5.0, 5.0/6.0, 8.0/9.0, 15.0/16.0, 1.0, 16.0/15.0, 9.0/8.0, 6.0/5.0, 5.0/4.0, 4.0/3.0, 45.0/32.0, 3.0/2.0, 8.0/5.0, 5.0/3.0, 16.0/9.0, 15.0/8.0, 2.0].map(x=>Math.log2(x) * Config.pitchesPerOctave);
