@@ -88,6 +88,7 @@ var beepbox = (function (exports) {
     Config.chipNoises = toNameMap([
         { name: "retro", volume: 0.25, basePitch: 69, pitchFilterMult: 1024.0, isSoft: false, samples: null },
         { name: "white", volume: 1.0, basePitch: 69, pitchFilterMult: 8.0, isSoft: true, samples: null },
+	{ name: "soft", volume: 0.1, basePitch: 16.9, pitchFilterMult: 4.0, isSoft: true, samples: null },
         { name: "clang", volume: 0.4, basePitch: 69, pitchFilterMult: 1024.0, isSoft: false, samples: null },
         { name: "buzz", volume: 0.3, basePitch: 69, pitchFilterMult: 1024.0, isSoft: false, samples: null },
         { name: "hollow", volume: 1.5, basePitch: 96, pitchFilterMult: 1.0, isSoft: true, samples: null },
@@ -104,6 +105,7 @@ var beepbox = (function (exports) {
         { name: "soft", isSeamless: false, attackSeconds: 0.025, releases: false, releaseTicks: 3, slides: false, slideTicks: 3 },
         { name: "slide", isSeamless: true, attackSeconds: 0.025, releases: false, releaseTicks: 3, slides: true, slideTicks: 3 },
         { name: "cross fade", isSeamless: false, attackSeconds: 0.04, releases: true, releaseTicks: 6, slides: false, slideTicks: 3 },
+	{ name: "really hard fade", isSeamless: false, attackSeconds: 0.0, releases: true, releaseTicks: 12, slides: false, slideTicks: 1 },
         { name: "hard fade", isSeamless: false, attackSeconds: 0.0, releases: true, releaseTicks: 48, slides: false, slideTicks: 3 },
         { name: "medium fade", isSeamless: false, attackSeconds: 0.0125, releases: true, releaseTicks: 72, slides: false, slideTicks: 3 },
         { name: "soft fade", isSeamless: false, attackSeconds: 0.06, releases: true, releaseTicks: 96, slides: false, slideTicks: 6 },
@@ -114,6 +116,7 @@ var beepbox = (function (exports) {
         { name: "delayed", amplitude: 0.3, periodsSeconds: [0.14], delayParts: 18 },
         { name: "heavy", amplitude: 0.45, periodsSeconds: [0.14], delayParts: 0 },
         { name: "shaky", amplitude: 0.1, periodsSeconds: [0.11, 1.618 * 0.11, 3 * 0.11], delayParts: 0 },
+	{ name: "extreme", amplitude: 2, periodsSeconds: [0.14, 0.890, 1.618 * 0.11, 9, 12, 0.01, 2], delayParts: 0 },
     ]);
     Config.intervals = toNameMap([
         { name: "union", spread: 0.0, offset: 0.0, volume: 0.7, sign: 1.0 },
