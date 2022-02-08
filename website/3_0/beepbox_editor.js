@@ -872,9 +872,9 @@ var beepbox = (function (exports) {
 					--white-piano-key: #bbb;
 					--black-piano-key: #444;
 					--pitch1-secondary-channel: #0099a1;
-					--pitch1-primary-channel:   #25f3ff;
-					--pitch1-secondary-note:    #00bdc7;
-					--pitch1-primary-note:      #92f9ff;
+					--pitch1-primary-channel:   #fcba03;
+					--pitch1-secondary-note:    #c77e00;
+					--pitch1-primary-note:      #fcba03;
 					--pitch2-secondary-channel: #a1a100;
 					--pitch2-primary-channel:   #ffff25;
 					--pitch2-secondary-note:    #c7c700;
