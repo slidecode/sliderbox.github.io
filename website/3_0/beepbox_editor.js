@@ -871,7 +871,7 @@ var beepbox = (function (exports) {
 					--fifth-note: #468;
 					--white-piano-key: #bbb;
 					--black-piano-key: #444;
-					--pitch1-secondary-channel: #0099a1;
+					--pitch1-secondary-channel: #a15b00;
 					--pitch1-primary-channel:   #fcba03;
 					--pitch1-secondary-note:    #c77e00;
 					--pitch1-primary-note:      #fcba03;
